@@ -8,8 +8,8 @@ namespace SecHand
 
 		public MainPage()
 		{
-			Children.Add(new MyMatchesPage());
-			Children.Add(new FindMatchPage());
+            Children.Add(new MyMatchesPage { Icon = "list.png" });
+            Children.Add(new FindMatchPage { Icon = "maginfyingGlass.png"});
 		}
 	}
 }

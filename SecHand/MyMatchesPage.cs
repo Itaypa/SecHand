@@ -13,28 +13,21 @@ namespace SecHand
 		{
 			Title = "My Matches";
 			MatchCollection = new List<ImageCell>(); 
-			MyMatchesList = new ListView();
-			MatchCollection.Add(new ImageCell { ImageSource = ImageSource.FromFile("house.png"),  Text = "The Metzadim" });
-			MatchCollection.Add(new ImageCell { ImageSource = ImageSource.FromFile("car.png"), Text = "Mazda" });
-			MyMatchesList.ItemsSource = MatchCollection;
-			DataTemplate template = new DataTemplate(typeof(ImageCell));
-			template.SetBinding(ImageCell.TextProperty, "Text");
+            MyMatchesList = new ListView{ RowHeight = 80 } ;
+			
+            MatchCollection.Add(new ImageCell { ImageSource = ImageSource.FromFile("house.jpeg"),  Text = "The Metzadim", Detail = "Some more info"});
+            MatchCollection.Add(new ImageCell { ImageSource = ImageSource.FromFile("house.jpeg"), Text = "Mazda", Detail="year 2013, 200,000 km" });
+		
+            MyMatchesList.ItemsSource = MatchCollection;
+			
+            DataTemplate template = new DataTemplate(typeof(ImageCell));
+            template.SetBinding(TextCell.TextProperty, "Text");
+            template.SetBinding(TextCell.DetailProperty, "Detail");
 			template.SetBinding(ImageCell.ImageSourceProperty, "ImageSource");
-			MyMatchesList.ItemTemplate = template;
+			
+            MyMatchesList.ItemTemplate = template;
+
 			Content = MyMatchesList;
 		}
-
-		public class MatchView : ImageCell 
-		{
-			public MatchView()
-			{
-			//	ImageSource.SetBinding(Label.IsEnabledProperty, new Binding("ImageSource"));
-			//	Text.SetBinding(Label.TextProperty, new Binding("Text"));
-
-			}
-		
-		}
-
-
 	}
 }
