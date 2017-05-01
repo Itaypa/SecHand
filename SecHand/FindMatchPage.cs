@@ -7,6 +7,7 @@ namespace SecHand
 		public FindMatchPage()
 		{
 			Title = "Find a match";
+
 		}
 	}
 }
