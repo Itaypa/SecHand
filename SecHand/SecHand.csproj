@@ -30,10 +30,11 @@
   <ItemGroup>
     <Compile Include="SecHand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FindMatchPage.cs" />
-    <Compile Include="MainPage.cs" />
-    <Compile Include="MyMatchesPage.cs" />
-    <Compile Include="PostViewCell.cs" />
+    <Compile Include="Entities\IListItem.cs" />
+    <Compile Include="ConcreteEntities\PostViewCell.cs" />
+    <Compile Include="Pages\FindMatchPage.cs" />
+    <Compile Include="Pages\MainPage.cs" />
+    <Compile Include="Pages\MyMatchesPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
@@ -51,6 +52,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entities\" />
+    <Folder Include="ConcreteEntities\" />
+    <Folder Include="Pages\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
